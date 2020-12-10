@@ -10,6 +10,7 @@ private:
    int _idHotel;
    std::string _nomHotel;
    std::string _villeHotel;
+   
    std::vector<Chambre> _listeChambre;
 
 public:
@@ -17,7 +18,7 @@ public:
    Hotel(int id, std::string nom, std::string ville);
    
 
-   int getId() const;
+   int getIdHotel() const;
    std::string getNom() const;
    std::string getVille() const;
   
@@ -25,13 +26,14 @@ public:
 
    
 
-   void setId(int id);
+   void setIdHotel(int id);
    void setNom(std::string type);
    void setVille(std::string ville);
    void modifier(int id, std::string type, std::string ville);
 
    void addChambre(Chambre chambre);
    friend std::ostream& operator<<(std::ostream& os, const Chambre& chambre);
+   void chambres();
 };
 
 #endif // HOTEL_H

@@ -1,15 +1,17 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "hotel.h"
 #include "chambre.h"
-
+using std::cout;
+using std::endl;
 
 Hotel::Hotel(int id, std::string nom, std::string ville) : 
 _idHotel(id), _nomHotel(nom), _villeHotel(ville){}
 
 
-int Hotel::getId() const{
+int Hotel::getIdHotel() const{
 	return _idHotel;
 }
 std::string Hotel::getNom() const{
@@ -21,12 +23,12 @@ std::string Hotel::getVille() const{
 
 std::string Hotel::infoHotel() const {
     std::string str;
-    str = "Hotel: " + std::to_string(getId()) + " | " + getNom() + " " + getVille();
+    str = "Hotel: " + std::to_string(getIdHotel()) + " | " + getNom() + " " + getVille();
     return str;
 }
 
 
-void Hotel::setId(int id){
+void Hotel::setIdHotel(int id){
 	_idHotel=id;
 }
 void Hotel::setNom(std::string nom){
@@ -36,7 +38,7 @@ void Hotel::setVille(std::string ville){
 	_villeHotel=ville;
 }
 void Hotel::modifier(int id, std::string nom, std::string ville){
-	setId(id);
+	setIdHotel(id);
 	setNom(nom);
 	setVille(ville);
 }
@@ -45,10 +47,23 @@ void Hotel::modifier(int id, std::string nom, std::string ville){
 void Hotel::addChambre(Chambre chambre){
 	_listeChambre.push_back(chambre);
 }
-std::ostream& operator<<(std::ostream& os, const Chambre& chambre) {
-    os << chambre.getId() << " " << chambre.getType();
+
+/*std::ostream& operator<<(std::ostream& os, const Chambre& chambre) {
+    os << chambre.infoChambre;
     return os;
 }
+*/
+
+std::ostream& operator<<(std::ostream& os, const std::vector<Chambre> chambres) {
+    auto i=chambres.begin();
+	while(i!=chambres.end()) {       
+		os << *i << "|";
+		++i;
+	}
+os << endl;
+return os;
+}
+	
 void Hotel::chambres(){
-	cout << _listeChambre;
+	std::cout << _listeChambre << std::endl;
 }
