@@ -21,10 +21,9 @@ std::string Hotel::getVille() const{
 
 std::string Hotel::infoHotel() const {
     std::string str;
-    str = "Hotel: " + std::to_string(getId()) + " | " + std::to_string(getNom()) + " " + std::to_string(getVille());
+    str = "Hotel: " + std::to_string(getId()) + " | " + getNom() + " " + getVille();
     return str;
 }
-
 
 
 void Hotel::setId(int id){
@@ -33,11 +32,23 @@ void Hotel::setId(int id){
 void Hotel::setNom(std::string nom){
 	_nomHotel=nom;
 }
-void Hotel::setVille()std::string ville{
+void Hotel::setVille(std::string ville){
 	_villeHotel=ville;
 }
-void Hotel::modifier(int id, std::string nom, fstd::string ville){
+void Hotel::modifier(int id, std::string nom, std::string ville){
 	setId(id);
 	setNom(nom);
 	setVille(ville);
+}
+
+
+void Hotel::addChambre(Chambre chambre){
+	_listeChambre.push_back(chambre);
+}
+std::ostream& operator<<(std::ostream& os, const Chambre& chambre) {
+    os << chambre.getId() << " " << chambre.getType();
+    return os;
+}
+void Hotel::chambres(){
+	cout << _listeChambre;
 }

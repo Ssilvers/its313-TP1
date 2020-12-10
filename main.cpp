@@ -4,6 +4,7 @@
 #include "date.h"
 #include "client.h"
 #include "chambre.h"
+#include "hotel.h"
 
 using namespace date;
 using std::cout;
@@ -48,10 +49,14 @@ cout<< A.infoChambre() <<endl;
 
 //Q4
 
-Hotel Calif(1,California,Paris);
+Hotel Calif(1,"California","Paris");
 cout << Calif.infoHotel() << endl;
-Calif.modifier(0,Bellagio,Las Vegas);
+Calif.modifier(0,"Bellagio","Las Vegas");
 cout << Calif.infoHotel() << endl;
+
+Hotel.addChambre(A);
+cout << "Chambres du" << Calif.getNom() << ":" << endl;
+cout << Calif.chambres()<< endl;
 
 return 0;
 }

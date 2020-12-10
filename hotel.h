@@ -23,11 +23,15 @@ public:
   
    std::string infoHotel() const;
 
+   
 
    void setId(int id);
    void setNom(std::string type);
    void setVille(std::string ville);
    void modifier(int id, std::string type, std::string ville);
+
+   void addChambre(Chambre chambre);
+   friend std::ostream& operator<<(std::ostream& os, const Chambre& chambre);
 };
 
 #endif // HOTEL_H
