@@ -20,7 +20,7 @@ float Chambre::getPrix() const{
 
 std::string Chambre::infoChambre() const {
     std::string str;
-    str = "Chambre: " + std::to_string(getIdChambre()) + " | " + std::to_string(getType()) + " " + std::to_string(getPrix()) + "€/nuit ";
+    str = "Chambre N° " + std::to_string(getIdChambre()) + " Type " + std::to_string(getType()) + " " + std::to_string(getPrix()) + "€/nuit ";
     return str;
 }
 
