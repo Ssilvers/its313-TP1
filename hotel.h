@@ -14,14 +14,14 @@ private:
 
 public:
 
-   Hotel(int id, Type type, float prix);
+   Hotel(int id, std::string nom, std::string ville);
    
 
    int getId() const;
    std::string getNom() const;
    std::string getVille() const;
   
-   std::string info() const;
+   std::string infoHotel() const;
 
 
    void setId(int id);

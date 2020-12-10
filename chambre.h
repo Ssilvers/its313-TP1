@@ -6,7 +6,7 @@ enum Type{Simple,Double,Familiale,Deluxe};
 
 class Chambre{
 private:
-   int _idChambre
+   int _idChambre;
    Type _type;
    float _prix;
 public:
