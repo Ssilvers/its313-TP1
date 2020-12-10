@@ -37,11 +37,21 @@ cout << Jean.info() << endl;
 
 //Q3
 Chambre A(1,Deluxe,80);
-cout<< A.info() <<endl;
+cout<< A.infoChambre() <<endl;
 A.setType(Familiale);
 A.setPrix(150);
-cout<< A.info() <<endl;
+cout<< A.infoChambre() <<endl;
 A.modifier(1,Deluxe,100);
-cout<< A.info() <<endl;
+cout<< A.infoChambre() <<endl;
+
+
+
+//Q4
+
+Hotel Calif(1,California,Paris);
+cout << Calif.infoHotel() << endl;
+Calif.modifier(0,Bellagio,Las Vegas);
+cout << Calif.infoHotel() << endl;
+
 return 0;
 }

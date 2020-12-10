@@ -5,11 +5,11 @@
 #include "chambre.h"
 
 Chambre::Chambre(int id, Type type, float prix) : 
-_id(id), _type(type), _prix(prix){}
+_idChambre(id), _type(type), _prix(prix){}
 
 
 int Chambre::getId() const{
-	return _id;
+	return _idChambre;
 }
 Type Chambre::getType() const{
 	return _type;
@@ -18,7 +18,7 @@ float Chambre::getPrix() const{
 	return _prix;
 }
 
-std::string Chambre::info() const {
+std::string Chambre::infoChambre() const {
     std::string str;
     str = "Chambre: " + std::to_string(getId()) + " | " + std::to_string(getType()) + " " + std::to_string(getPrix()) + "€/nuit ";
     return str;
@@ -27,7 +27,7 @@ std::string Chambre::info() const {
 
 
 void Chambre::setId(int id){
-	_id=id;
+	_idChambre=id;
 }
 void Chambre::setType(Type type){
 	_type=type;

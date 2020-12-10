@@ -6,7 +6,7 @@ enum Type{Simple,Double,Familiale,Deluxe};
 
 class Chambre{
 private:
-   int _id;
+   int _idChambre
    Type _type;
    float _prix;
 public:
@@ -18,7 +18,7 @@ public:
    Type getType() const;
    float getPrix() const;
   
-  std::string info() const;
+  std::string infoChambre() const;
 
 
    void setId(int id);
