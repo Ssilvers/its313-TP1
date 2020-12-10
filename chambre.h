@@ -14,14 +14,14 @@ public:
    Chambre(int id, Type type, float prix);
    
 
-   int getId() const;
+   int getIdChambre() const;
    Type getType() const;
    float getPrix() const;
   
   std::string infoChambre() const;
 
 
-   void setId(int id);
+   void setIdChambre(int id);
    void setType(Type type);
    void setPrix(float prix);
    void modifier(int id, Type type, float prix);
