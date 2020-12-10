@@ -5,10 +5,10 @@
 
 
 Client::Client(int id, std::string nom, std::string prenom, int nbreserv) : 
-_id(id), _nom(nom), _prenom(prenom), _nbreserv(nbreserv){}
+_idClient(id), _nom(nom), _prenom(prenom), _nbreserv(nbreserv){}
 
-int Client::getId() const {
-	return _id;
+int Client::getIdClient() const {
+	return _idClient;
 }
 std::string Client::getNom() const {
 	return _nom;
@@ -21,15 +21,15 @@ int Client::getNbreserv() const {
 }
 
 
-std::string Client::info() const {
+std::string Client::infoClient() const {
     std::string str;
-    str = "Client: " + std::to_string(getId()) + " | " + getNom() + " " + getPrenom() + " | " + std::to_string(getNbreserv()) + " réservations";
+    str = "Client: " + std::to_string(getIdClient()) + " | " + getNom() + " " + getPrenom() + " | " + std::to_string(getNbreserv()) + " réservations";
     return str;
 }
 
 
-void Client::setId(int id){
-	_id=id;
+void Client::setIdClient(int id){
+	_idClient=id;
 }
 void Client::setNom(std::string nom){
 	_nom=nom;
@@ -41,7 +41,7 @@ void Client::setNbreserv(int nbreserv){
 	_nbreserv=nbreserv;
 }
 void Client::modifier(int id, std::string nom, std::string prenom, int nbreserv){
-	setId(id);
+	setIdClient(id);
 	setNom(nom);
 	setPrenom(prenom);
 	setNbreserv(nbreserv);

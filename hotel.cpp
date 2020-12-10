@@ -57,7 +57,7 @@ std::ostream& operator<<(std::ostream& os, const Chambre& chambre) {
 std::ostream& operator<<(std::ostream& os, const std::vector<Chambre> chambres) {
     auto i=chambres.begin();
 	while(i!=chambres.end()) {       
-		os << *i << "|";
+		os << "   - " <<*i << "\n";
 		++i;
 	}
 os << endl;
@@ -65,5 +65,5 @@ return os;
 }
 	
 void Hotel::chambres(){
-	std::cout << _listeChambre << std::endl;
+	std::cout << _listeChambre;
 }
