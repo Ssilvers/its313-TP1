@@ -1,6 +1,7 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 #include <string>
+#include <vector>
 
 class Client {
 private:
@@ -24,4 +25,17 @@ public:
    void setNbreserv(int nbreserv);
    void modifier(int id, std::string nom, std::string prenom, int nbreserv);
 };
+
+/*
+class Clients{
+private:
+   std::vector<Client> _clients;
+public:
+   Clients();
+   void addClient(Client client);
+
+   void liste();
+};
+*/
+
 #endif // CLIENT_H

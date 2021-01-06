@@ -2,6 +2,7 @@
 
 #include "date.h"
 #include "client.h"
+#include "vector"
 
 
 Client::Client(int id, std::string nom, std::string prenom, int nbreserv) : 
@@ -46,3 +47,32 @@ void Client::modifier(int id, std::string nom, std::string prenom, int nbreserv)
 	setPrenom(prenom);
 	setNbreserv(nbreserv);
 }
+
+
+
+/*
+Clients::Clients(){
+
+}
+
+void Clients::addClient(Client client){
+	_clients.push_back(client);
+}
+std::ostream& operator<<(std::ostream& os, const Client& client) {
+    os << client.infoClient();
+    return os;
+}
+std::ostream& operator<<(std::ostream& os, const std::vector<Client> clients) {
+    auto i=clients.begin();
+	while(i!=clients.end()) {       
+		os << "   - " <<*i << "\n";
+		++i;
+	}
+os << std::endl;
+return os;
+}
+
+void Clients::liste(){
+	std::cout << _clients;
+}
+*/

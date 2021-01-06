@@ -5,6 +5,8 @@
 #include <vector>
 #include "chambre.h"
 
+#include <list>
+
 class Hotel{
 private:
    int _idHotel;
