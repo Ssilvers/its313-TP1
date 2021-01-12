@@ -18,6 +18,16 @@ std::ostream& operator<<(std::ostream& os, const Client& client) {
     return os;
 }
 
+int nombrenuit(Date dateDebut, Date dateFin){
+	Date dateCalcul = dateDebut;
+	int k=0;
+	while(dateCalcul != dateFin){
+		k=k+1;
+		dateCalcul.nextDay();
+	}
+	return k;
+}
+
 int main(){
 
 /* TEST
@@ -161,6 +171,7 @@ while (it != Clients.end()){
 	cout << *it << endl;
 	++it;
 }
+cout << endl;
 goto debut;
 debut:
 	cout << "Entrez date de début:" << endl;
@@ -176,6 +187,7 @@ debut:
 
 	Date dateDebut(annee,mois,jour);
 	if(dateDebut.checkDate(annee,mois,jour)==false){
+		cout << endl;
 		goto debut;
 	}
 
@@ -194,15 +206,19 @@ fin:
 
 	Date dateFin(annee2,mois2,jour2);
 	if(dateFin.checkDate(annee2,mois2,jour2)==false){
+		cout << endl;
 		goto fin;
 	}
 
 if(dateDebut>=dateFin){
-	cout << "La date de début se situe après la date d'arrivé, merci de rentrer à nouveau les dates du séjour:" << endl;
+	cout << "La date de début se situe après la date d'arrivé, merci de rentrer à nouveau les dates du séjour:" << endl << endl;
 	goto debut;
 }
 
-nbrenuit(Date Debut, Date Fin){}
+int nbrenuit = nombrenuit(dateDebut,dateFin);
+cout << "Nombre de nuit: "<< nbrenuit << endl;
+
+
 
 return 0;
 }
