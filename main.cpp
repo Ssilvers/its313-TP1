@@ -161,7 +161,48 @@ while (it != Clients.end()){
 	cout << *it << endl;
 	++it;
 }
+goto debut;
+debut:
+	cout << "Entrez date de début:" << endl;
+	cout << "Jour:" << endl;
+	int jour;
+	std::cin >> jour;
+	cout << "Mois" << endl;
+	int mois;
+	std::cin >> mois;
+	cout << "Année" << endl;
+	int annee;
+	std::cin >> annee;
 
+	Date dateDebut(annee,mois,jour);
+	if(dateDebut.checkDate(annee,mois,jour)==false){
+		goto debut;
+	}
+
+goto fin;
+fin:
+	cout << "Entrez date de fin:" << endl;
+	cout << "Jour:" << endl;
+	int jour2;
+	std::cin >> jour2;
+	cout << "Mois" << endl;
+	int mois2;
+	std::cin >> mois2;
+	cout << "Année" << endl;
+	int annee2;
+	std::cin >> annee2;
+
+	Date dateFin(annee2,mois2,jour2);
+	if(dateFin.checkDate(annee2,mois2,jour2)==false){
+		goto fin;
+	}
+
+if(dateDebut>=dateFin){
+	cout << "La date de début se situe après la date d'arrivé, merci de rentrer à nouveau les dates du séjour:" << endl;
+	goto debut;
+}
+
+nbrenuit(Date Debut, Date Fin){}
 
 return 0;
 }
