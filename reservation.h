@@ -18,7 +18,7 @@ public:
    Reservation(int id, Date debut, Date fin, int idHotel,
    int idChambre, int idClient ,float montant);
    
-   
+   void CalculMontant(int nbrenuit, int nbreserv, float prix);
 
    int getIdReservation() const;
    Date getDebut() const;
@@ -35,6 +35,7 @@ public:
    void setIdChambre(int idChambre) ;
    void setIdClient(int idClient) ;
    void setMontant(int montant);
+   void calculMontant(int nbrenuit,float prix,int fidelite);
   
    std::string infoReservation() const;
 

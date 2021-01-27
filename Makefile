@@ -3,7 +3,7 @@
 CXX        = g++
 CXXFLAGS   = -Wall -Wextra -std=c++14
 LDFLAGS    = -lm
-SRCS       = date.cpp client.cpp main.cpp chambre.cpp hotel.cpp
+SRCS       = date.cpp client.cpp main.cpp chambre.cpp hotel.cpp reservation.cpp
 OBJS       = $(SRCS:.cpp=.o)
 TARGET     = Programme
 DEPFLAGS   = -MMD -MP

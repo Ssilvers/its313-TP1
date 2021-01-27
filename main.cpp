@@ -132,7 +132,6 @@ Chambre rechercheChambre(std::vector<Chambre> listeChambre,int idChambre){
 //Puis demande de sélectionner le bon nom
 //afin de retourner l'ID du client correspondant
 int clientNom(std::string nom, std::vector<Client> clients){
-	int verif;
 
 	cout << endl << "Liste des clients avec ce nom:" << endl;
 

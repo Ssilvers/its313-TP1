@@ -17,6 +17,9 @@ _idReservation(id),_dateDebut(debut), _dateFin(fin),_idHotel(idHotel),
 _idChambre (idChambre),_idClient(idClient),_montant(montant){
 }
 
+void Reservation::CalculMontant(int nbrenuit, int nbreserv, float prix){
+	_montant = nbrenuit * prix * (1-nbreserv);
+}
 
 int Reservation::getIdReservation() const{
 	return _idReservation;
@@ -63,6 +66,14 @@ void Reservation::setMontant(int montant){
 	_montant=montant;
 }
 
+void Reservation::calculMontant(int nbrenuit,float prix,int fidelite){
+	float reduc = fidelite;
+	reduc = reduc/100;
+	reduc = 1-reduc;
+
+	_montant = nbrenuit * prix * reduc;
+}
+
 
 std::string Reservation::infoReservation() const {
     std::string str;
@@ -74,21 +85,5 @@ std::string Reservation::infoReservation() const {
     return str;
 }
 
-/*
 
-void Reservation::setIdReservation(int id){
-	_idReservation=id;
-}
-void Reservation::setType(Type type){
-	_type=type;
-}
-void Reservation::setPrix(float prix){
-	_prix=prix;
-}
-void Reservation::modifier(int id, Type type, float prix){
-	setIdReservation(id);
-	setType(type);
-	setPrix(prix);
-}
-*/
 
