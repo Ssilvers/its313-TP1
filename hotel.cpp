@@ -48,7 +48,6 @@ void Hotel::addChambre(Chambre chambre){
 	_listeChambre.push_back(chambre);
 }
 
-
 std::ostream& operator<<(std::ostream& os, const Chambre& chambre) {
     os << chambre.infoChambre();
     return os;
@@ -57,13 +56,19 @@ std::ostream& operator<<(std::ostream& os, const Chambre& chambre) {
 std::ostream& operator<<(std::ostream& os, const std::vector<Chambre> chambres) {
     auto i=chambres.begin();
 	while(i!=chambres.end()) {       
-		os << "   - " <<*i << "\n";
+		os << " - " <<*i << "\n";
 		++i;
 	}
 os << endl;
 return os;
 }
-	
+
 void Hotel::chambres(){
-	std::cout << _listeChambre;
+	cout<<_listeChambre;
 }
+
+std::vector<Chambre> Hotel::getChambres() const{
+	return _listeChambre;
+}
+
+

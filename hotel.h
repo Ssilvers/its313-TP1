@@ -32,10 +32,11 @@ public:
    void setNom(std::string type);
    void setVille(std::string ville);
    void modifier(int id, std::string type, std::string ville);
+   friend std::ostream& operator<<(std::ostream& os, const Chambre& chambre);
 
    void addChambre(Chambre chambre);
-   friend std::ostream& operator<<(std::ostream& os, const Chambre& chambre);
    void chambres();
+   std::vector<Chambre> getChambres() const;
 };
 
 #endif // HOTEL_H
