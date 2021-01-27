@@ -148,7 +148,6 @@ int clientNom(std::string nom, std::vector<Client> clients){
 	i++;
 	}
 	if(erreur==true){
-		cout<<"Aucun client de possède ce nom"<<endl;
 		return 0;
 	}
 	cout << endl;
@@ -529,8 +528,8 @@ if(verif!=0){
 	//et on récupère l'ID du client souhaité
 	int clientReservation = clientNom(nom, Clients);
 	if(clientReservation==0){
-		cout << "Aucun client avec ce nom, vérifiez la saisit et réeassayez" << endl;
 		system("clear"); //Efface le terminal
+		cout << "Aucun client avec ce nom, vérifiez la saisit et réeassayez" << endl;
 		goto client; // Si aucun client avec ce nom, on resaisit
 	}
 
@@ -589,7 +588,7 @@ std::string reservationN;
 goto recherchereservation;
 recherchereservation: // Marqueur pour revenir à la saisit si erreur
 
-cout << "Numéro de la réservation ?" << endl;
+cout << "Numéro de la réservation à afficher ?" << endl;
 std::cin >> reservationN;
 
 //conversion de la saisit en chiffres
