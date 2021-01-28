@@ -36,7 +36,8 @@ public:
    void setIdClient(int idClient) ;
    void setMontant(int montant);
    void calculMontant(int nbrenuit,float prix,int fidelite);
-  
+   void modifier( int idReservation,Date dateDebut, Date dateFin, int idHotel, int idChambre, int idClient, float montant);
+
    std::string infoReservation() const;
 
 /*

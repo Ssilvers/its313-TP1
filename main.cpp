@@ -88,14 +88,16 @@ std::vector<int> checkDispo(Date debut, Date fin, std::vector<Reservation> reser
 
 //Retourne l'id d'une chambre en fonction 
 //des dispos et du type souhaité
-int checkChambre(std::vector<int> paslibre, std::vector<Chambre> hotel, int typeChambre){
+int checkChambre(std::vector<int> paslibre, 
+	std::vector<Chambre> hotel, int typeChambre){
 	int fin=hotel.size();
 	int i = 0;
 
 	while(i<fin){
 		int id=hotel.at(i).getIdChambre();
 
-		auto it = find(paslibre.begin(), paslibre.end(), id);
+		auto it = find(paslibre.begin(), 
+			paslibre.end(), id);
 
 		if(it!=paslibre.end()){
 
@@ -173,7 +175,7 @@ int clientNom(std::string nom, std::vector<Client> clients){
 	boucle = clients.size();
 
 	while (i < boucle){
-		if(clients.at(i).getIdClient()==selection){
+		if((clients.at(i).getIdClient()==selection) && (clients.at(i).getPrenom()==nom)){
 			cout << clients.at(i);
 			erreur=false;
 			return clients.at(i).getIdClient();
@@ -264,7 +266,6 @@ std::vector<Reservation> annulerReservation(std::vector<Reservation> reservation
 }
 
 
-
 int main(){
 
 int verif; // Varibale utilisée pour vérifier les types dans la suite du programme
@@ -310,10 +311,10 @@ Client Client3(3,"Dujardin","Jean",5);
 Client Client4(4,"Lasalle","Jean",5);
 Client Client5(5,"Pierre","Jean",5);
 Client Client6(6,"Jean","Jean",5);
-Client Client7(7,"Valjean","Jean",5);
+Client Client7(7,"Sebastien","Patrick",5);
 Client Client8(8,"Pierre","Jean",5);
 Client Client9(9,"Reno","Jean",5);
-Client Client10(10,"Pierrepernaut","Jean",5);
+Client Client10(10,"Balkany","Patrick",5);
 
 //Vecteur regroupant tous les clients
 std::vector<Client> Clients;
@@ -359,10 +360,15 @@ trait();
 
 
 
+
 //Indique le nombre de réservations que l'on
 //souhaite créer (il faut changer nbre dans while)
 int repetition=1;
 while(repetition<=1){
+
+
+
+
 
 //CHOIX DES DATES
 goto debut; 
@@ -446,14 +452,14 @@ cout << "Nombre de nuit: "<< nbrenuit << endl << endl;
 
 
 // Test de compatibilité date réservations (à commenter)
-Date debut(2010,10,10);
-Date fin(2010,10,20);
+Date debut(2021,10,10);
+Date fin(2021,10,20);
 Reservation test(3,debut,fin,1,2,1,50);
-Date debut2(2010,10,10);
-Date fin2(2010,10,20);
+Date debut2(2021,10,10);
+Date fin2(2021,10,20);
 Reservation test2(4,debut,fin,1,1,1,50);
-Date debut3(2010,10,10);
-Date fin3(2010,10,20);
+Date debut3(2021,10,10);
+Date fin3(2021,10,20);
 Reservation test3(5,debut,fin,1,3,1,50);
 
 
@@ -630,6 +636,8 @@ if(conversionID!=0){
 	}
 }
 
+
+
 trait();
 
 cout << "Voulez vous annuler une réservation ? (Oui/Non)" << endl;
@@ -637,8 +645,8 @@ std::string choix;
 std::cin >> choix;
 if(choix=="Oui","oui","O","o"){
 	
-	goto recherchereservation2;
-	recherchereservation2: // Marqueur pour revenir à la saisit si erreur
+	goto recherchereservation3;
+	recherchereservation3: // Marqueur pour revenir à la saisit si erreur
 
 	cout << "Numéro de la réservation à annuler ?" << endl;
 	std::cin >> reservationN;
@@ -651,7 +659,7 @@ if(choix=="Oui","oui","O","o"){
 		reservations = annulerReservation(reservations, verifReservation);
 	}else{
 		cout << "Erreur, veuillez saisir un numéro de réservation" << endl;
-		goto recherchereservation2;
+		goto recherchereservation3;
 	}
 
 	
