@@ -19,9 +19,11 @@ Simple (n°0), Double (n°1), Familiale (n°2) et Deluxe (n°3)
 
 Question 4 : Pour la classe Hôtel : Aucune remarque particulière
 Question 5 : Pour la classe Réservation : 
+Pour les informations sur l’hôtel, la chambre, et le client, nous avons eu des difficultés à utiliser des pointeurs pour accéder directement aux objets associés, donc nous avons choisi d’utiliser des entiers représentants les ID des objets, que nous pourrons par la suite récupérer grâce aux vecteurs contenant toutes les chambres/clients/…
+Pour le calcul du montant, nous avons choisi une réduction de 1% pour chaque réservation déjà enregistrée pour le client (variable membre de client _nbreserv dans notre cas)
 
-	Pour les informations sur l’hôtel, la chambre, et le client, nous avons eu des difficultés à utiliser des pointeurs pour accéder directement aux objets associés, donc nous avons choisi d’utiliser des entiers représentants les ID des objets, que nous pourrons par la suite récupérer grâce aux vecteurs contenant toutes les chambres/clients/…
-	Pour le calcul du montant, nous avons choisi une réduction de 1% pour chaque réservation déjà enregistrée pour le client (variable membre de client _nbreserv dans notre cas)
+
+
 
 
 
