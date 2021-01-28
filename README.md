@@ -40,7 +40,8 @@ Question 8 : On demande à l’utilisateur de sélectionner le type de chambre e
 Pour la vérification de la disponibilité de la chambre, nous avons choisit de procéder en 2 étapes :
 - On regarde toutes les chambres occupées sur la période donnée : grâce à la fonction « checkDispo » à laquelle on entre en paramètres le vecteur de réservations et les dates de début et de fin. Cette fonction retourne un vecteur contenant les ID des chambres occupées sur la période.
 - On utilise le vecteur retourné précédemment ainsi que le type de chambre saisit pour trouver une chambre disponible (donc on passe aussi en paramètre le vecteur des chambres). On regarde à l’aide d’une boucle si l’ID de la 1ère chambre est libre ou pas grâce au vecteur des chambres occupées, puis, si elle ne l’est pas, on regarde son type. Si ces 2 informations sont bonnes, on retourne l’ID de la chambre en question, sinon on retourne 0 pour indiquer qu’aucune chambre de ce type c’est disponible.
-	Des réservations factices permettent de tester cette fonctionnalité (après saisit des dates): elles occupent toutes les chambres de type 0 (Simple) sur la période du 10/10/2021 au 15/10/2021. Il suffit donc de demander une chambre simple sur cette période pour voir qu’aucune chambre n’est disponible.
+
+-->Des réservations factices permettent de tester cette fonctionnalité (après saisit des dates): elles occupent toutes les chambres de type 0 (Simple) sur la période du 10/10/2021 au 15/10/2021. Il suffit donc de demander une chambre simple sur cette période pour voir qu’aucune chambre n’est disponible.
 
 Question 9 : On demande à l’utilisateur de rentrer un nom. (Dans notre cas, 8 personnes s’appellent Jean et 2 Patrick)
 On affiche ensuite la liste des clients avec ce nom grâce au vecteur de client que l’on compare à la saisit. L’utilisateur peut ensuite choisir la bonne personne grâce à un système de chiffre.
